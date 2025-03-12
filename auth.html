@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authenticator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        text-align: center;
+        background-color: #f4f4f4;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      .button-container {
+        margin-top: 20px;
+      }
+
+      .link-button {
+        display: inline-block;
+        margin: 10px;
+        padding: 15px 30px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .link-button:hover {
+        background-color: #0056b3;
+      }
+
+      .link-button:active {
+        background-color: #003d80;
+      }
+
+      .auth-form {
+        margin: 20px 0;
+      }
+
+      .auth-form input {
+        padding: 10px;
+        margin: 10px;
+        width: 250px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      .auth-form button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .auth-form button:hover {
+        background-color: #0056b3;
+      }
+
+      #auth-message {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar container">
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="logo">
+          <img src="assests/logo.jpg" alt="FSVS Logo" class="logo-img" />
+          <span>Transparify</span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li>
+            <a href="auth.html" onclick="redirect">Authenticator</a>
+          </li>
+          <li><a href="checksum.html">Transit - Check</a></li>
+          <li><a href="sales.html">Sales Records</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Authenticator Feature</h1>
+      <p>This page showcases the Authenticator functionality.</p>
+
+      <!-- Authenticator Form -->
+      <section class="auth-form">
+        <h2>Login to Your Account</h2>
+        
+
+      <div class="button-container">
+        <a
+          href="https://contents.tdscpc.gov.in/"
+          class="link-button"
+          target="_blank"
+          >TDS CPC</a
+        >
+        <a href="https://www.gst.gov.in/" class="link-button" target="_blank"
+          >GST Portal</a
+        >
+        <a
+          href="https://www.mca.gov.in/content/mca/global/en/mca/master-data/MDS.html"
+          class="link-button"
+          target="_blank"
+          >Master Data
+          (Check Business Details)</a
+        >
+      </div>
+    </main>
+    <p>Verify business authenticity through government portals like TDS, GST, and MCA. These platforms provide access to tax compliance, GST registration, and legal business registration details.</p>
+    <footer>
+      <p>
+        &copy; 2023 Fraudulent Sales Verification System. All rights reserved.
+      </p>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/hamburger-menu.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transparify</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    h2 {
+      color: #555;
+    }
+
+    #user-button {
+      margin-top: 20px;
+    }
+
+    #sign-in,
+    #sign-up {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Transperify</h1>
+    <div id="app"></div>
+  </div>
+  <script async crossorigin="anonymous"
+    data-clerk-publishable-key="pk_test_dW5jb21tb24tZG9scGhpbi04MS5jbGVyay5hY2NvdW50cy5kZXYk"
+    src="https://uncommon-dolphin-81.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+    type="text/javascript"></script>
+
+  <script>
+    window.addEventListener("load", async function () {
+      await Clerk.load();
+
+      if (Clerk.user) {
+        document.getElementById("app").innerHTML = `
+                    <h2>Welcome, ${Clerk.user.firstName}!</h2>
+                    <div id="user-button"></div>
+                `;
+
+        const userButtonDiv = document.getElementById("user-button");
+        Clerk.mountUserButton(userButtonDiv);
+      } else {
+        document.getElementById("app").innerHTML = `
+                    <h2>Please Sign In or Sign Up</h2>
+                    <div id="sign-in"></div>
+                `;
+
+        const signInDiv = document.getElementById("sign-in");
+        Clerk.mountSignIn(signInDiv, {
+          onSuccess: () => {
+            window.location.href = "index.html";
+          },
+          onError: (error) => {
+            alert("Sign-in failed: " + error.message);
+          },
+        });
+
+        const signUpDiv = document.getElementById("sign-up");
+        Clerk.mountSignUp(signUpDiv, {
+          onSuccess: () => {
+            window.location.href = "index.html";
+          },
+          onError: (error) => {
+            alert("Sign-up failed: " + error.message);
+          },
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

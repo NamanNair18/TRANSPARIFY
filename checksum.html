@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checksum Generator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar container">
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="logo">
+          <img src="assests/logo.jpg" alt="FSVS Logo" class="logo-img" />
+          <span>Transparify</span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="auth.html">Authenticator</a></li>
+          <li><a href="checksum.html">Transit - Check</a></li>
+          <li><a href="sales.html">Sales Records</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="container">
+        <h1>Checksum Generator</h1>
+        <p>
+          Verify file integrity with checksum validation or generate checksums.
+        </p>
+
+        <!-- Checksum Generator Section -->
+        <section id="checksum">
+          <h2>Checksum Generator</h2>
+          <form id="checksum-form">
+            <input
+              type="text"
+              id="vehicle-number"
+              placeholder="Vehicle Number"
+              required
+            />
+            <input type="date" id="transaction-date" required />
+            <input
+              type="number"
+              id="quantity"
+              placeholder="Quantity"
+              required
+            />
+            <button type="submit">Generate Checksum</button>
+          </form>
+          <p id="checksum-output"></p>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; 2025 Fraudulent Sales Verification System. All rights reserved.
+      </p>
+    </footer>
+    <script>
+      const checksumForm = document.getElementById("checksum-form");
+      const checksumOutput = document.getElementById("checksum-output");
+
+      checksumForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const vehicleNumber = document
+          .getElementById("vehicle-number")
+          .value.trim();
+        const transactionDate = document
+          .getElementById("transaction-date")
+          .value.trim();
+        const quantity = document.getElementById("quantity").value.trim();
+
+        if (vehicleNumber && transactionDate && quantity) {
+          const checksum = `${vehicleNumber}-${transactionDate}-${quantity}`
+            .split("")
+            .reduce((acc, char) => acc + char.charCodeAt(0), 0);
+          checksumOutput.textContent = `Generated Checksum: ${checksum}`;
+          checksumOutput.style.color = "green";
+        } else {
+          checksumOutput.textContent = "Please fill in all fields correctly.";
+          checksumOutput.style.color = "red";
+        }
+      });
+    </script>
+    <script src="js/checksum.js"></script>
+  </body>
+</html>

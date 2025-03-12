@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transparify</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar container">
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="logo">
+          <img src="assests/logo.jpg" alt="FSVS Logo" class="logo-img" />
+          <span>Transparify</span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="auth.html">Authenticator</a></li>
+          <li><a href="checksum.html">Transit - Check</a></li>
+          <li><a href="sales.html">Sales Records</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- Hero -->
+      <section id="home" class="hero">
+        <div class="container">
+          <h1>TRANSPARIFY 📂</h1>
+          <p>
+            Ensure secure and verified sales transactions with advanced
+            validation techniques.
+          </p>
+          <a href="#about" class="btn-primary">Learn More</a>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about">
+        <div class="container">
+          <h2>About Us</h2>
+          <div class="about-content">
+            <div class="about-text">
+              <p>
+                At Transparify, we are committed to revolutionizing the way
+                businesses detect and prevent fraudulent sales. As a
+                cutting-edge platform designed for transparency and
+                accountability, our mission is to empower organizations to
+                safeguard their financial integrity and maintain trust with
+                stakeholders.
+              </p>
+              <br />
+              <p>
+                We specialize in innovative solutions such as Revenue Stamp
+                verification, Checksum authentication, and business Authentify,
+                which leverage technology to ensure accuracy, compliance, and
+                fraud prevention. Our platform is tailored for B2B businesses,
+                providing tools that seamlessly integrate into existing systems
+                while addressing challenges like invoice authenticity,
+                related-party transactions, and financial misrepresentation.
+              </p>
+              <br/>
+              <p>
+                With Transparify, businesses can confidently tackle fraud risks,
+                enhance operational transparency, and build a future rooted in
+                trust and accountability
+              </p>
+              <!-- <a href="#feedback" class="btn-secondary">Share Feedback</a> -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feedback Section -->
+      <div class="container">
+        <section id="feedback">
+          <h2>Fraud Reporting</h2>
+          <p>
+            Your Step againt Fraudlent is valuable to us. Let us know how we can
+            improve.
+          </p>
+          <form id="feedback-form">
+            <input type="text" id="name" placeholder="Name" required />
+            <input
+              type="text"
+              id="email"
+              placeholder="Evidence if any"
+              required
+            />
+            <textarea
+              id="message"
+              placeholder="Fraud Report"
+              required
+            ></textarea>
+            <button type="submit" class="btn-primary">Submit Report</button>
+          </form>
+        </section>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <!-- contact info -->
+      <section id="contact">
+        <div class="container">
+          <h2>Contact Us</h2>
+          <p>
+            We’re here to help! Reach out to us for any queries or assistance.
+          </p>
+          <p><strong>Phone:</strong> +91 1234567890</p>
+          <p><strong>Email:</strong> Transperify1@gmail.comd</p>
+          <p><strong>Address:</strong> 123 Nirma College, Ahemdabad, India,</p>
+
+          <div class="map-container" id="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3669.106339803232!2d72.53882061095456!3d23.12978801223136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e83007e71ea7d%3A0xd9756d91e940bcea!2sNirma%20University%20Main%20Gate!5e0!3m2!1sen!2sin!4v1737611479714!5m2!1sen!2sin"
+              width="1100"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+              width="300%" height="300" style="border: 0" allowfullscreen=""
+              loading="lazy" >
+            </iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+    <br />
+    <br />
+    <br />
+
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2023 Fraudulent Sales Verification System (Transparify). All
+          rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/hamburger-menu.js"></script>
+  </body>
+</html>

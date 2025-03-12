@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sales Records</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar container">
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="logo">
+        <img src="assets/logo.jpg" alt="FSVS Logo" class="logo-img" />
+        <span>Transparify</span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="auth.html">Authenticator</a></li>
+        <li><a href="checksum.html">Transit - Check</a></li>
+        <li><a href="sales.html">Sales Records</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Sales Records B2B</h1>
+        <p>Manage your sales securely and efficiently.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- Sales Management Section -->
+      <section id="sales">
+        <h2>Sales Records</h2>
+        <form id="sales-form">
+          <input type="text" id="id" placeholder="GSTIN" required />
+          <input type="number" id="amount" placeholder="Amount" required />
+          <input type="number" id="quantity" placeholder="Quantity" required />
+          <input type="text" id="name" placeholder="Company Name" required />
+          <select id="trans" title="trans" required>
+            <option value="" disabled selected>Select Transaction Type</option>
+            <option value="online">Online</option>
+            <option value="cash">Cash</option>
+          </select>
+          <button type="submit">Add Sale</button>
+        </form>
+        <table>
+          <thead>
+            <tr>
+              <th>Invoice Number</th>
+              <th>GSTIN</th>
+              <th>Amount</th>
+              <th>Quantity</th>
+              <th>Company Name</th>
+              <th>Transaction Type</th>
+              <th>Revenue Stamp Required</th>
+            </tr>
+          </thead>
+          <tbody id="sales-table-body"></tbody>
+        </table>
+      </section>
+
+      <!-- Audit Trail Section -->
+      <section id="audit-trail">
+        <h2>Audit Trail</h2>
+        <ul id="audit-log"></ul>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      &copy; 2023 Fraudulent Sales Verification System. All rights reserved.
+    </p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+  <script src="sales2.js" defer></script>
+  <script src="audit-trail.js"></script>
+</body>
+
+</html>
